@@ -75,11 +75,12 @@ margin:0 auto;
 
 export const Details= styled('div')`
 width:30%;
-aspect-ratio: 3/4;
+aspect-ratio: 2/2;
 display: flex;
 flex-direction: column;
 position: fixed;
 right: 0;
+font-size: 0.7em;
 top:51%;
 transform: translate(0, -50%);
 justify-content: center;
@@ -103,7 +104,7 @@ display:grid;
 grid-template-columns: repeat(3,1fr);
 width: 90%;
 margin: 30px auto;
-
+font-size: 0.8em;
 
 `
 
@@ -128,9 +129,9 @@ margin: 0 auto;
 
 export const Component= styled('div')`
 display: flex;
-width: 155px;
+width: 100px;
 position: relative;
-height: 160px;
+height: 105px;
 flex-direction: column;
 margin: 20px auto;
 @media (max-width: ${({theme})=> getMaxBreakPoint(theme, 'sm')}) {
@@ -156,7 +157,7 @@ margin: 20px auto;
 }
 & .separator{
     background-color: black;
-    border:solid black 4px;
+    border:solid black 3px;
     @media (max-width: ${({theme})=> getMaxBreakPoint(theme, 'sm')}) {
       border:solid black 2px;
       z-index: 1;
@@ -171,7 +172,7 @@ margin: 20px auto;
     border:solid black 4px;
     border-radius: 100%;
 top: 50%;
-left:42%;
+left:41%;
 transform: translate(0, -50%);
 z-index: 2;
 :hover{
