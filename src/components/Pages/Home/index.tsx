@@ -222,7 +222,7 @@ const PokeList: React.FC = () => {
              </button> */}
                     </div>
                     <Component style={{ display: showPokeball }}>
-                      <img src="/static/img/Index/pokeball.png" onClick={() => handlePokemonDelete()}/>
+                      <img src="/static/img/Home/pokeball.png" onClick={() => handlePokemonDelete()}/>
                     </Component>
                   </div>
                 ) : (

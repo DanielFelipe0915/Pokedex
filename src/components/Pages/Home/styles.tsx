@@ -130,6 +130,7 @@ margin: 0 auto;
 export const Component= styled('div')`
 display: flex;
 position: relative;
+width:100px;
 aspect-ratio: 1/1;
 flex-direction: column;
 margin: 20px auto;
