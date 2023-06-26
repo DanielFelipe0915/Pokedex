@@ -120,8 +120,9 @@ const PokeList: React.FC = () => {
     setPokemonList(completePokemonList);
   };
 
-  const handleSearch = (event: React.ChangeEvent<HTMLSearchBoxElement>) => {
+  const handleSearch = (event:any) => {
     setSearchTerm(event.target.value);
+
     const filteredPokemonList = completePokemonList.filter((pokemon) =>
       pokemon.name.toLowerCase().includes(event.target.value.toLowerCase())
     );
