@@ -129,7 +129,6 @@ margin: 0 auto;
 
 export const Component= styled('div')`
 display: flex;
-width: 100px;
 position: relative;
 aspect-ratio: 1/1;
 flex-direction: column;
@@ -140,50 +139,9 @@ margin: 20px auto;
   
 };
 
-& .white{
-    width: 100%;
-    aspect-ratio: 10/8;
-    background-color:#fff;
-    border-radius: 0 0 200px 200px;
-    border:solid black 2px;
-    
-}
-& .red{
-    background-color:#ff0000 ;
-    border-radius:200px 200px 0 0 ;
-    width: 100%;
-    aspect-ratio: 10/8;
-    border:solid black 2px;
-}
-& .separator{
-    background-color: black;
-    border:solid black 3px;
-    @media (max-width: ${({theme})=> getMaxBreakPoint(theme, 'sm')}) {
-      border:solid black 2px;
-      z-index: 1;
-
-};
-}
-& .ball{
-    position: absolute;
-    width:19%;
-    aspect-ratio: 1/1;
-    background-color:#fff;
-    border:solid black 4px;
-    border-radius: 100%;
-top: 50%;
-left:41%;
-transform: translate(0, -50%);
-z-index: 2;
 :hover{
   cursor: pointer;
-  background-color:#db1111;
+  
 }
-@media (max-width: ${({theme})=> getMaxBreakPoint(theme, 'sm')}) {
-      border:solid black 3px;
-      top: 50%;
-left:36%;
 
-};
-}
 `

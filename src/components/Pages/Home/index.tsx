@@ -216,19 +216,13 @@ const PokeList: React.FC = () => {
                         justifyContent: "center",
                       }}
                     >
-                      {/* <button onClick={() => handlePokemonDelete()}>
+                      {/* <button >
               borrrar
 
              </button> */}
                     </div>
                     <Component style={{ display: showPokeball }}>
-                      <div className="red"></div>
-                      <button
-                        className="ball"
-                        onClick={() => handlePokemonDelete()}
-                      ></button>
-                      <div className="separator"></div>
-                      <div className="white"></div>
+                      <img src="/static/img/Index/pokeball.png" onClick={() => handlePokemonDelete()}/>
                     </Component>
                   </div>
                 ) : (
