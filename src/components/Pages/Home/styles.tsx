@@ -1,46 +1,188 @@
 import { styled } from "@mui/material";
+import { getMaxBreakPoint } from "../../../utils/StyledUtil";
 
-export default styled('div')`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  padding: 20px;
-  background-color: #21d4fd;
-  background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
+export const Header=styled('div')`
+background-color: #202020;
+display: flex;
+justify-content: center;
+align-items: center;
+width:100%;
+height: 10vh;
+color:white;
+font-size: 1rem;
+position: fixed;
+z-index: 3;
+`
+
+export const SearchBox= styled('input')`
+width:65%;
+margin:3rem auto 1rem;
+`; 
+
+
+export const Body=styled('div')`
+padding-top: 10vh;
+display: flex;
+width:100%;
+height: auto;
+color:white;
+font-size: 1rem;
+`
+export const Aside=styled('div')`
+background-color: #202020;
+display: flex;
+width:10%;
+height: auto;
+color:white;
+font-size: 1rem;
+`
+
+
+export const Main= styled('div')`
+width:100%;
+color:black;
+display: flex;
+flex-direction: row;
+
+@media (max-width: ${({theme})=> getMaxBreakPoint(theme, 'sm')}) {
+    flex-direction: column-reverse;
+}
 `;
 
-export const H1 = styled("h1")`
-  color: #ffffff;
-  margin: 0 auto;
-  text-align: center;
+export const List= styled('div')`
+width:65%;
+display: flex;
+flex-direction: column;
+@media (max-width: ${({theme})=> getMaxBreakPoint(theme, 'md')}) {
+
+width:100%;
+
+}
+`;
+
+export const Buttons= styled('div')`
+width:100%;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+margin:0 auto;
+& .button{
+    margin: 10px
+}
+`;
+
+
+export const Details= styled('div')`
+width:30%;
+aspect-ratio: 3/4;
+display: flex;
+flex-direction: column;
+position: fixed;
+right: 0;
+top:51%;
+transform: translate(0, -50%);
+justify-content: center;
+align-items: center;
+border:solid black 2px;
+@media (max-width: ${({theme})=> getMaxBreakPoint(theme, 'md')}) {
   position: relative;
-  font-size: 3.6em;
-  line-height: 0.9em;
-  & span.title {
-    text-shadow: 1px 1px 0px #000000;
-    font-weight: bold;
-  }
-  & .anotation {
-    font-size: 0.4em;
-    display: block;
+  background-color: white;
+  transform: translate(0, 0);
+  top:0;
+  width:100%;
+  aspect-ratio: 1/1;
+  line-height: 1px;
+}
+
+`;
+
+export const GridContainer= styled('div')`
+gap: 10px;
+display:grid;
+grid-template-columns: repeat(3,1fr);
+width: 90%;
+margin: 30px auto;
+
+
+`
+
+export const CardPK= styled('div')`
+width: 70%;
+margin:0 auto;
+display: flex;
+flex-direction: column;
+text-align: center;
+cursor: pointer;
+border-radius: 30px;
+box-shadow: rgba(0, 0, 0, 0.15) 3px 4px 4px;
+//box-shadow: #452764 0px 5px 10px 0px;
+
+
+& .image{
+width: 50%;
+margin: 0 auto;
+
+}
+`
+
+export const Component= styled('div')`
+display: flex;
+width: 155px;
+position: relative;
+height: 160px;
+flex-direction: column;
+margin: 20px auto;
+@media (max-width: ${({theme})=> getMaxBreakPoint(theme, 'sm')}) {
+  
+  width:60px;
+  height: 65px;
+};
+
+& .white{
     width: 100%;
-    text-align: center;
-    text-shadow: 1px 1px 0px #000000;
-    font-weight: 100;
-    & a {
-      color: ${({ theme }) => theme.palette.secondary.main};
-      text-decoration: none;
-    }
-    cursor: pointer;
-  }
-  & small {
-    display: block;
-    font-weight: 100;
-    font-size: 0.6em;
-    color: #ff149d;
-    text-shadow: 1px 1px 0px ${({ theme }) => theme.palette.customColor[700]};
-  }
-`;
+    aspect-ratio: 10/8;
+    background-color:#fff;
+    border-radius: 0 0 200px 200px;
+    border:solid black 2px;
+    
+}
+& .red{
+    background-color:#ff0000 ;
+    border-radius:200px 200px 0 0 ;
+    width: 100%;
+    aspect-ratio: 10/8;
+    border:solid black 2px;
+}
+& .separator{
+    background-color: black;
+    border:solid black 4px;
+    @media (max-width: ${({theme})=> getMaxBreakPoint(theme, 'sm')}) {
+      border:solid black 2px;
+      z-index: 1;
+
+};
+}
+& .ball{
+    position: absolute;
+    width:19%;
+    aspect-ratio: 1/1;
+    background-color:#fff;
+    border:solid black 4px;
+    border-radius: 100%;
+top: 50%;
+left:42%;
+transform: translate(0, -50%);
+z-index: 2;
+:hover{
+  cursor: pointer;
+  background-color:#db1111;
+}
+@media (max-width: ${({theme})=> getMaxBreakPoint(theme, 'sm')}) {
+      border:solid black 3px;
+      top: 50%;
+left:36%;
+
+};
+}
+`
