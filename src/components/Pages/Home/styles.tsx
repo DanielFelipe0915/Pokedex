@@ -131,13 +131,13 @@ export const Component= styled('div')`
 display: flex;
 width: 100px;
 position: relative;
-height: 105px;
+aspect-ratio: 1/1;
 flex-direction: column;
 margin: 20px auto;
 @media (max-width: ${({theme})=> getMaxBreakPoint(theme, 'sm')}) {
   
   width:60px;
-  height: 65px;
+  
 };
 
 & .white{
