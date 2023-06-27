@@ -5,11 +5,9 @@ import {
   List,
   Main,
   CardPK,
-  Buttons,
   Component,
   Header,
   Body,
-  Aside,
   SearchBox,
 } from "./styles";
 import Link from "next/link";
@@ -47,11 +45,7 @@ const PokeList: React.FC = () => {
     null
   );
   const [searchTerm, setSearchTerm] = useState("");
-  const [currentPageUrl, setCurrentPageUrl] = useState(
-    "https://pokeapi.co/api/v2/pokemon"
-  );
-  const [nextPageUrl, setNextPageUrl] = useState("");
-  const [prevPageUrl, setPrevPageUrl] = useState("");
+
   const [isLoading, setIsLoading] = useState(false);
   const [showPokeball, setShowPokeball] = useState("none");
 
@@ -64,8 +58,7 @@ const PokeList: React.FC = () => {
           "https://pokeapi.co/api/v2/pokemon?limit=1000"
         );
         const data = await response.json();
-        setNextPageUrl("");
-        setPrevPageUrl("");
+    
         setPokemonList(data.results);
         setCompletePokemonList(data.results);
         setIsLoading(false);
@@ -110,17 +103,7 @@ const PokeList: React.FC = () => {
     setShowPokeball("none");
   };
 
-  const goToPreviousPage = () => {
-    setCurrentPageUrl("");
-    setPokemonList(completePokemonList);
-  };
-
-  const goToNextPage = () => {
-    setCurrentPageUrl("");
-    setPokemonList(completePokemonList);
-  };
-
-  const handleSearch = (event:any) => {
+  const handleSearch = (event: any) => {
     setSearchTerm(event.target.value);
 
     const filteredPokemonList = completePokemonList.filter((pokemon) =>
@@ -151,22 +134,22 @@ const PokeList: React.FC = () => {
               <GridContainer>
                 {pokemonList.map((pokemon) => (
                   <Link href="#topclass">
-                  <CardPK
-                  
-                    key={pokemon.name}
-                    onClick={() => handlePokemonClick(pokemon)}
-                  >
-                    {pokemon.name.charAt(0).toUpperCase()}
-                    {pokemon.name.slice(1)}
-                    <img
-                      src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${getPokemonId(
-                        pokemon.url
-                      )}.png`}
-                      alt="Sprite del Pokémon"
-                    />
+                    <CardPK
+                      key={pokemon.name}
+                      onClick={() => handlePokemonClick(pokemon)}
+                    >
+                      {pokemon.name.charAt(0).toUpperCase()}
+                      {pokemon.name.slice(1)}
+                      <img
+                        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${getPokemonId(
+                          pokemon.url
+                        )}.png`}
+                        alt="Sprite del Pokémon"
+                      />
 
-                    <span>No. {getPokedexNumber(pokemon.url)}</span>
-                  </CardPK></Link>
+                      <span>No. {getPokedexNumber(pokemon.url)}</span>
+                    </CardPK>
+                  </Link>
                 ))}
               </GridContainer>
             )}
@@ -215,14 +198,12 @@ const PokeList: React.FC = () => {
                         alignItems: "center",
                         justifyContent: "center",
                       }}
-                    >
-                      {/* <button >
-              borrrar
-
-             </button> */}
-                    </div>
+                    ></div>
                     <Component style={{ display: showPokeball }}>
-                      <img src="/static/img/Home/pokeball.png" onClick={() => handlePokemonDelete()}/>
+                      <img
+                        src="/static/img/Home/pokeball.png"
+                        onClick={() => handlePokemonDelete()}
+                      />
                     </Component>
                   </div>
                 ) : (
