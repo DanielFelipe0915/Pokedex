@@ -9,6 +9,7 @@ import {
   Header,
   Body,
   SearchBox,
+  TypePokemonDiv,
 } from "./styles";
 import Link from "next/link";
 
@@ -58,7 +59,7 @@ const PokeList: React.FC = () => {
           "https://pokeapi.co/api/v2/pokemon?limit=1000"
         );
         const data = await response.json();
-    
+
         setPokemonList(data.results);
         setCompletePokemonList(data.results);
         setIsLoading(false);
@@ -101,6 +102,68 @@ const PokeList: React.FC = () => {
   const handlePokemonDelete = () => {
     setSelectedPokemon(null);
     setShowPokeball("none");
+  };
+
+  const translateType = (type: string) => {
+    switch (type) {
+      // 1
+      case "fire":
+        return "Fuego";
+      //2
+      case "water":
+        return "Agua";
+      //3
+      case "electric":
+        return "Electrico";
+      //4
+      case "grass":
+        return "Planta";
+      //5
+      case "ground":
+        return "Tierra";
+      //6
+      case "bug":
+        return "Bicho";
+      //7
+      case "poison":
+        return "Veneno";
+      //8
+      case "flying":
+        return "Volador";
+      //9
+      case "fairy":
+        return "Hada";
+      //10
+      case "normal":
+        return "Normal";
+      //11
+      case "steel":
+        return "Acero";
+      //12
+      case "rock":
+        return "Roca";
+      //13
+      case "ghost":
+        return "Fantasma";
+      //14
+      case "dragon":
+        return "Dragon";
+      //15
+      case "psychic":
+        return "Psiquico";
+      //16
+      case "ice":
+        return "Hielo";
+      //17
+      case "fighting":
+        return "Lucha";
+      //18
+      case "dark":
+        return "Siniestro";
+
+      default:
+        return type;
+    }
   };
 
   const handleSearch = (event: any) => {
@@ -184,13 +247,17 @@ const PokeList: React.FC = () => {
                     <p style={{ textAlign: "center" }}>Tipos:</p>
 
                     {pokemonDetails.types.map((type) => (
-                      <p
-                        style={{ textAlign: "center", lineHeight: "4px" }}
+                      <TypePokemonDiv
+                      
+                        // style={{ textAlign: "center", lineHeight: "4px" }}
                         key={type.slot}
                       >
-                        *{type.type.name.charAt(0).toUpperCase()}
-                        {type.type.name.slice(1)}
-                      </p>
+                        <div id="name" className={type.type.name }>
+                        {translateType(type.type.name)}
+</div>
+                        {/* *{type.type.name.charAt(0).toUpperCase()}
+                        {type.type.name.slice(1)} */}
+                      </TypePokemonDiv>
                     ))}
                     <div
                       style={{

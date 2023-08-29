@@ -146,3 +146,78 @@ margin: 20px auto;
 }
 
 `
+
+export const TypePokemonDiv= styled('div')`
+display: flex;
+justify-content: center;
+align-items: center;
+font-weight:400;
+color:white;
+
+& #name{
+padding:0.4em;
+aspect-ratio: 8/1;
+border-radius:20px;
+margin-top: 0.5em;
+text-align: center;
+};
+
+& .fire{
+  background-color: #fd7d24;
+}
+& .water{
+  background-color: #4592c4;
+}
+& .electric{
+  background-color: #eed535;
+  color:#212121;
+}
+& .grass{
+  background-color: #9bcc50;
+  color:#212121;
+}
+& .ground{
+  background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+  color:#212121;
+}
+& .bug{
+  background-color: #729f3f;
+}
+& .poison{
+  background-color: #b97fc9;
+}
+& .flying{
+  color:#212121;
+  background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+}
+& .fairy{
+  background-color: #fdb9e9;
+  color:#212121;
+}
+& .normal{
+  color:#212121;
+
+  background-color: #a4acaf;
+  
+}& .steel{
+  background-color: #9eb7b8;
+  color:#212121;
+}& .rock{
+  background-color: #a38c21;
+}& .ghost{
+  background-color: #7b62a3;
+}
+& .psychic{
+  background-color: #f366b9;
+}
+& .ice{
+  background-color: #51c4e7;
+  color:#212121;
+}
+& .fighting{
+  background-color: #d56723;
+}
+& .dark{
+  background-color: #707070;
+}
+`
