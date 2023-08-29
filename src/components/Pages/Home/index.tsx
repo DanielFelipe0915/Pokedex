@@ -131,6 +131,7 @@ const PokeList: React.FC = () => {
       case "flying":
         return "Volador";
       //9
+      
       case "fairy":
         return "Hada";
       //10
