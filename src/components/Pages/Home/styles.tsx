@@ -220,4 +220,8 @@ text-align: center;
 & .dark{
   background-color: #707070;
 }
+& .dragon{
+  background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+}
 `
+
